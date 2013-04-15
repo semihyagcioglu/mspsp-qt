@@ -33,9 +33,9 @@ Installation
 
 Road Map
 ------------
-- First version will include basic classes and general architecture to solve the problem.
+    - First version will include basic classes and general architecture to solve the problem.
 
 
-Copyright info
+Copyright Info
 --------------
 Copyright (C) 2013 Semih Yagcioglu
