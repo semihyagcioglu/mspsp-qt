@@ -3,7 +3,7 @@ mspsp-qt
 
 Multi-skill Project Scheduling Problem Qt Application
 
-mspsp-qt is a free software used to solve the Multi-skill Project Scheduling Problem.
+mspsp-qt is a free software to solve the Multi-skill Project Scheduling Problem.
 It contains core classes for the main MSPSP problem and also some GUI classes for enabling users to configure the problem and algorithm parameters. 
 
 The core algorithm is built on the Genetic Algorithms.
@@ -21,15 +21,8 @@ You can download mspsp-qt using Git:
 Dependencies
 ------------
 
-    - Qt >= 5.0
+    - [Qt](http://qt-project.org/) >= 5.0
 
-
-Compilation
------------
-
-
-Installation
-------------
 
 Road Map
 ------------
