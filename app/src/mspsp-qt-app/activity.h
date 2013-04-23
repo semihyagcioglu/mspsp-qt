@@ -15,6 +15,9 @@ public:
     Activity(int id, std::string name, int duration);
     void SetActivitySettings(int id, std::string name, int duration);
     int GetDuration();
+    int Id() const { return id; }
+    void Id(int val) { id = val; }
+
 private:
     int id;
     std::string name;

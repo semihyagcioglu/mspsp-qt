@@ -21,3 +21,33 @@ int Project::GetUpperBound()
 {
     return this->upperBound;
 }
+
+void Project::AddActivity(Activity* activity)
+{
+    this->activities.push_back(activity);
+}
+
+Activity* Project::GetActivityAt(int index)
+{
+    if(index < this->activities.size())
+    {
+        return this->activities.at(index);
+    }
+    else
+    {
+        return NULL;
+    }
+}
+
+Activity* Project::GetActivityById(int id)
+{
+    for(int i = 0; i < this->activities.size(); ++i)
+    {
+        if(GetActivityAt(i)->Id() == id)   //id found at index i
+        {
+            return GetActivityAt(i);
+        }
+    }
+
+    return NULL;   //id not found
+}
