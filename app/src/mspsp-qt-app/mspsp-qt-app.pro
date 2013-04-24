@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         widget.cpp \
     project.cpp \
-    activity.cpp
+    activity.cpp \
+    teammember.cpp
 
 HEADERS  += widget.h \
     project.h \
-    activity.h
+    activity.h \
+    teammember.h
 
 FORMS    += widget.ui

@@ -21,7 +21,7 @@ You can download mspsp-qt using Git:
 Dependencies
 ------------
 
-    - [Qt](http://qt-project.org/) >= 5.0
+* [Qt](http://qt-project.org/) >= 5.0
 
 
 Road Map

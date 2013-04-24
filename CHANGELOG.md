@@ -1,8 +1,11 @@
+0.0.5    2013-04-24
+	- Added TeamMember class.
+	- Added activity based features to Project class.
+
 0.0.4    2013-04-21
 	- Added tests project for unit tests.
 	- Added unit tests for Project and Activity classes.
 	- Fixed missing libraries in Project and Activity classes.
-
 
 0.0.3    2013-04-19
 
