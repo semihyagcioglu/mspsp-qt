@@ -17,12 +17,14 @@ SOURCES += main.cpp\
     project.cpp \
     activity.cpp \
     teammember.cpp \
-    settings.cpp
+    settings.cpp \
+    skill.cpp
 
 HEADERS  += widget.h \
     project.h \
     activity.h \
     teammember.h \
-    settings.h
+    settings.h \
+    skill.h
 
 FORMS    += widget.ui
