@@ -18,13 +18,17 @@ SOURCES += main.cpp\
     activity.cpp \
     teammember.cpp \
     settings.cpp \
-    skill.cpp
+    skill.cpp \
+    ga.cpp \
+    population.cpp
 
 HEADERS  += widget.h \
     project.h \
     activity.h \
     teammember.h \
     settings.h \
-    skill.h
+    skill.h \
+    ga.h \
+    population.h
 
 FORMS    += widget.ui
