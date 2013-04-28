@@ -6,10 +6,10 @@ Project::Project()
 
 Project::Project(int id, std::string name)
 {
-    this->SetProjectSettings(id, name);
+    this->SetProjectDetails(id, name);
 }
 
-void Project::SetProjectSettings(int id, std::string name)
+void Project::SetProjectDetails(int id, std::string name)
 {
     this->id=id;
     this->name = name;

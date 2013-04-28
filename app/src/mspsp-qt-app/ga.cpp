@@ -6,7 +6,7 @@ GA::GA()
 
 GA::GA(Project *project)
 {
-
+    this->project = project;
 }
 
 Population GA::CreateInitialPopulation()

@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     settings.cpp \
     skill.cpp \
     ga.cpp \
-    population.cpp
+    population.cpp \
+    chromosome.cpp
 
 HEADERS  += widget.h \
     project.h \
@@ -29,6 +30,7 @@ HEADERS  += widget.h \
     settings.h \
     skill.h \
     ga.h \
-    population.h
+    population.h \
+    chromosome.h
 
 FORMS    += widget.ui
