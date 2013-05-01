@@ -14,3 +14,8 @@ Chromosome *Population::GetMemberAt(int i)
 {
     return this->members.at(i);
 }
+
+void Population::RemoveAllMembers()
+{
+    members.clear();
+}

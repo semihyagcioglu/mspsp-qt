@@ -11,6 +11,7 @@ public:
 
     void AddMember(Chromosome* phenotype);
     Chromosome* GetMemberAt(int i);
+    void RemoveAllMembers();
 
 private:
     std::vector<Chromosome*> members;

@@ -4,7 +4,7 @@ Gene::Gene()
 {
 }
 
-void Gene::SetCode(string value)
+void Gene::SetCode(std::string value)
 {
     this->code = value;
 }
