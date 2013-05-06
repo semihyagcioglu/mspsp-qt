@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     ga.cpp \
     population.cpp \
     chromosome.cpp \
-    gene.cpp
+    gene.cpp \
+    utility.cpp
 
 HEADERS  += widget.h \
     project.h \
@@ -33,6 +34,7 @@ HEADERS  += widget.h \
     ga.h \
     population.h \
     chromosome.h \
-    gene.h
+    gene.h \
+    utility.h
 
 FORMS    += widget.ui
