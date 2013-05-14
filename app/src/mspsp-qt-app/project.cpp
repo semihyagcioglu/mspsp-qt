@@ -9,6 +9,10 @@ Project::Project(int id, std::string name)
     this->SetProjectDetails(id, name);
 }
 
+Project::~Project(void)
+{
+}
+
 void Project::SetProjectDetails(int id, std::string name)
 {
     this->id=id;
@@ -46,6 +50,32 @@ Activity* Project::GetActivityById(int id)
         if(GetActivityAt(i)->Id() == id)   //id found at index i
         {
             return GetActivityAt(i);
+        }
+    }
+
+    return NULL;   //id not found
+}
+
+void Project::AddTeamMember( TeamMember* teamMember )
+{
+    this->teamMembers.push_back(teamMember);
+}
+
+TeamMember* Project::GetTeamMemberAt( int index )
+{
+    if(index < this->teamMembers.size())
+        return this->teamMembers.at(index);
+    else
+        return NULL;
+}
+
+TeamMember* Project::GetTeamMemberById( int id )
+{
+    for(int i = 0; i < teamMembers.size(); ++i)
+    {
+        if(GetTeamMemberAt(i)->Id() == id)   //id found at index i
+        {
+            return GetTeamMemberAt(i);
         }
     }
 
