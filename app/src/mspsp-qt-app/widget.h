@@ -15,6 +15,12 @@ public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
     
+    void StartAlgorithm();
+    void StopAlgorithm();
+private slots:
+
+    void on_btnStartStop_clicked();
+
 private:
     Ui::Widget *ui;
 };
