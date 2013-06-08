@@ -12,10 +12,20 @@ public:
     {
         RANK_SELECTION,
         ROULETTE_WHEEL_SELECTION,
-        TOURNAMENT_SELECTION
+        TOURNAMENT_SELECTION,
+        RANDOM_SELECTION,
+        ELITIST_SELECTION,
+        ROUND_ROBIN_SELECTION
     };
 
-    // Types of crossover methods.
+    // Types of replacement methods.
+    enum REPLACEMENT_METHOD
+    {
+        STEADY_STATE,
+        PERCENT90_REPLACEMENT
+    };
+
+    // Types of cross-over methods.
     enum CROSS_OVER_METHOD
     {
         SINGLE_POINT_CROSS_OVER,
@@ -27,77 +37,59 @@ public:
     // Types of mutation methods.
     enum MUTATION_METHOD
     {
+        /*INSERT_MUTATION,
+            SWAP_MUTATION,
+            INVERT_MUTATION,
+            SCRAMBLE_MUTATION,
+            GAUSSIAN_MUTATION,
+            BOUNDARY_MUTATION */
         SWAP_TEAM_MEMBER_ASSIGNMENT,
         SWAP_ACTIVITY,
         SWAP_ACTIVITY_AND_TEAM_MEMBER_ASSIGNMENT
     };
 
-    // Types of replacement methods.
-    enum REPLACEMENT_METHOD
-    {
-        STEADY_STATE
-    };
-
     Settings();
-    Settings(int maximumScheduleLimit, int populationSize);
+    Settings(int MAXIMUM_SCHEDULE_LIMIT, int POPULATION_SIZE);
+    Settings::~Settings();
+    void SetToDefaultValues();
 
-    int GetMaximumScheduleLimit() const { return this->maximumScheduleLimit; }
-    void SetMaximumScheduleLimit(int val) { this->maximumScheduleLimit = val; }
+    /************************************************************************/
+    /* Application Settings                                                 */
+    /************************************************************************/
+    std::string FILE_PATH;
+    std::string REPORT_PATH;
+    std::string INSTANCE_PATH;
+    std::string INSTANCE_TYPE;
+    int SCHEDULE_COEFFICIENT;
+    int MAXIMUM_SCHEDULE_LIMIT; // The meta-heuristic algorithm will be terminated if this count is reached.
+    int MAXIMUM_TIME_LIMIT; // In milliseconds. The meta-heuristic algorithm will be terminated if this time is reached.
+    int CONVERGENCE_COUNT; // The number to check whether a fitness plateau is reached by controlling how many times the GA can not produce a better solution.
 
-    int GetPopulationSize() const { return this->populationSize; }
-    void SetPopulationSize(int val) { this->populationSize = val; }
 
-    std::string GetFilePath() const;
-    void SetFilePath(const std::string &value);
+    /************************************************************************/
+    /* Algorithm Settings                                                   */
+    /************************************************************************/
 
-    double GetCrossoverRate() const;
-    void SetCrossoverRate(double value);
+    int POPULATION_SIZE;
+    double CROSSOVER_PROBABILITY;
+    double MUTATION_PROBABILITY;
+    bool MUTATE_ONLY_ON_IMPROVEMENT;
+    int TOURNAMENT_SIZE;
+    double ELITE_RATE;
+    bool IS_ELITES_ALLOWED;
+    int ELITE_SIZE;
+    bool SELECT_ONE_PARENT_FROM_ELITES;
+    bool IS_ADAPTIVE;
+    bool ALLOW_IMMIGRATION;
+    double IMMIGRATION_RATIO;
 
-    double GetMutationRate() const;
-    void SetMutationRate(double value);
-
-    int GetTournamentSize() const;
-    void SetTournamentSize(int value);
-
-    double GetEliteRate() const;
-    void SetEliteRate(double value);
-
-    bool GetIsElitesAllowed() const;
-    void SetIsElitesAllowed(bool value);
-
-    int GetEliteSize() const;
-    void SetEliteSize(int value);
-
-    SELECTION_METHOD GetSelectionMethod() const;
-    void SetSelectionMethod(const SELECTION_METHOD &value);
-
-    CROSS_OVER_METHOD GetCrossOverMethod() const;
-    void SetCrossOverMethod(const CROSS_OVER_METHOD &value);
-
-    MUTATION_METHOD GetMutationMethod() const;
-    void SetMutationMethod(const MUTATION_METHOD &value);
-
-    REPLACEMENT_METHOD GetReplacementMethod() const;
-    void SetReplacementMethod(const REPLACEMENT_METHOD &value);
+    Settings::SELECTION_METHOD SELECTION_METHOD;
+    Settings::CROSS_OVER_METHOD CROSSOVER_METHOD;
+    Settings::MUTATION_METHOD MUTATION_METHOD;
+    Settings::REPLACEMENT_METHOD REPLACEMENT_METHOD;
 
 private:
 
-    /* Application Settings */
-    int maximumScheduleLimit;
-    std::string filePath;
-
-    /* Genetic Algorithm Settings */
-    int populationSize;
-    double crossoverRate;
-    double mutationRate;
-    int tournamentSize;
-    double eliteRate;
-    bool isElitesAllowed;
-    int eliteSize;
-    SELECTION_METHOD selectionMethod;
-    CROSS_OVER_METHOD crossOverMethod;
-    MUTATION_METHOD mutationMethod;
-    REPLACEMENT_METHOD replacementMethod;
 };
 
 #endif // SetTINGS_H

@@ -2,119 +2,46 @@
 
 Settings::Settings()
 {
+    SetToDefaultValues();
 }
 
 Settings::Settings(int maximumScheduleLimit, int populationSize)
 {
-    this->SetMaximumScheduleLimit(maximumScheduleLimit);
-    this->SetPopulationSize(populationSize);
+    this->MAXIMUM_SCHEDULE_LIMIT = maximumScheduleLimit;
+    this->POPULATION_SIZE = populationSize;
 }
 
-std::string Settings::GetFilePath() const
+Settings::~Settings()
 {
-    return filePath;
+
 }
 
-void Settings::SetFilePath(const std::string &value)
+// Set to default values.
+void Settings::SetToDefaultValues()
 {
-    filePath = value;
-}
+    this->FILE_PATH="..\\";
+    this->REPORT_PATH = "..\\Reports\\";
+    this->INSTANCE_PATH = "..\\Instances\\";
+    this->INSTANCE_TYPE ="*.sm";
 
-Settings::REPLACEMENT_METHOD Settings::GetReplacementMethod() const
-{
-    return replacementMethod;
-}
-
-void Settings::SetReplacementMethod(const REPLACEMENT_METHOD &value)
-{
-    replacementMethod = value;
-}
-
-Settings::MUTATION_METHOD Settings::GetMutationMethod() const
-{
-    return mutationMethod;
-}
-
-void Settings::SetMutationMethod(const MUTATION_METHOD &value)
-{
-    mutationMethod = value;
-}
-
-Settings::CROSS_OVER_METHOD Settings::GetCrossOverMethod() const
-{
-    return crossOverMethod;
-}
-
-void Settings::SetCrossOverMethod(const CROSS_OVER_METHOD &value)
-{
-    crossOverMethod = value;
-}
-
-Settings::SELECTION_METHOD Settings::GetSelectionMethod() const
-{
-    return selectionMethod;
-}
-
-void Settings::SetSelectionMethod(const SELECTION_METHOD &value)
-{
-    selectionMethod = value;
-}
-
-int Settings::GetEliteSize() const
-{
-    return eliteSize;
-}
-
-void Settings::SetEliteSize(int value)
-{
-    eliteSize = value;
-}
-
-bool Settings::GetIsElitesAllowed() const
-{
-    return isElitesAllowed;
-}
-
-void Settings::SetIsElitesAllowed(bool value)
-{
-    isElitesAllowed = value;
-}
-
-double Settings::GetEliteRate() const
-{
-    return eliteRate;
-}
-
-void Settings::SetEliteRate(double value)
-{
-    eliteRate = value;
-}
-
-int Settings::GetTournamentSize() const
-{
-    return tournamentSize;
-}
-
-void Settings::SetTournamentSize(int value)
-{
-    tournamentSize = value;
-}
-
-double Settings::GetMutationRate() const
-{
-    return mutationRate;
-}
-
-void Settings::SetMutationRate(double value)
-{
-    mutationRate = value;
-}
-double Settings::GetCrossoverRate() const
-{
-    return crossoverRate;
-}
-
-void Settings::SetCrossoverRate(double value)
-{
-    crossoverRate = value;
+    this->POPULATION_SIZE = 30;
+    this->CROSSOVER_PROBABILITY = 1.00;
+    this->MUTATION_PROBABILITY = 0.1;
+    this->TOURNAMENT_SIZE = 2;
+    this->ELITE_RATE = 0.1;
+    this->IS_ELITES_ALLOWED = true;
+    this->ELITE_SIZE = this->POPULATION_SIZE * this->ELITE_RATE;
+    this->SELECT_ONE_PARENT_FROM_ELITES = true;
+    this->MUTATE_ONLY_ON_IMPROVEMENT = true;
+    this->IS_ADAPTIVE = true;
+    this->SELECTION_METHOD = TOURNAMENT_SELECTION;
+    this->CROSSOVER_METHOD = SINGLE_POINT_CROSS_OVER;
+    this->MUTATION_METHOD = SWAP_ACTIVITY_AND_TEAM_MEMBER_ASSIGNMENT;
+    this->REPLACEMENT_METHOD = PERCENT90_REPLACEMENT;
+    this->SCHEDULE_COEFFICIENT = 250;
+    this->MAXIMUM_SCHEDULE_LIMIT = this->POPULATION_SIZE * this->SCHEDULE_COEFFICIENT;
+    this->MAXIMUM_TIME_LIMIT = 0;
+    this->CONVERGENCE_COUNT = 1000;
+    this->ALLOW_IMMIGRATION = false;
+    this->IMMIGRATION_RATIO = 0.6;
 }
