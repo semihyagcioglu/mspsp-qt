@@ -12,6 +12,7 @@ class Gene
 {
 public:
     Gene();
+    Gene(Gene* _gene);
 
     void SetCode(std::string value);
     std::string& GetCode();

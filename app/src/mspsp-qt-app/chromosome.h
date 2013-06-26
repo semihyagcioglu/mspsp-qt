@@ -8,9 +8,13 @@ class Chromosome
 {
 public:
     Chromosome();
+    ~Chromosome();
+
     void AddGene(Gene* gene);
     void SetFitness(double fitness);
     double GetFitness();
+    size_t GetGeneCount();
+    void SwapGenes(int firstPosition, int secondPosition);
 
 private:
     double fitness;
