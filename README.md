@@ -15,25 +15,21 @@ The core algorithm is built on the Genetic Algorithms.
 
 mspsp-qt runs on Windows, other operating systems are currently not supported.
 
-
 Get mspsp-qt
 ----------
 You can download mspsp-qt using Git:
 
     $ git clone git://github.com/semihyagcioglu/mspsp-qt.git
 
-
 Dependencies
 ------------
 
 * [Qt](http://qt-project.org/) >= 5.0
 
-
 Road Map
 ------------
     - First version will include basic classes and general architecture to solve the problem.
 
-
 Copyright Info
 --------------
-Copyright (C) 2013 Semih Yagcioglu
+This software is licenced under the MIT License (MIT) Copyright (c) 2013 Semih Yağcıoğlu

@@ -47,7 +47,7 @@ Activity* Project::GetActivityById(int id)
 {
     for(int i = 0; i < this->activities.size(); ++i)
     {
-        if(GetActivityAt(i)->Id() == id)   //id found at index i
+        if(GetActivityAt(i)->GetId() == id)   //id found at index i
         {
             return GetActivityAt(i);
         }

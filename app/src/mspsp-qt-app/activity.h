@@ -8,15 +8,18 @@
 /*
     This class is a representation of an activity in a project.
 */
+
 class Activity
 {
 public:
     Activity();
-    Activity(int id, std::string name, int duration);
-    void SetActivitySettings(int id, std::string name, int duration);
+    Activity(int id, std::string name, int duration, std::vector<std::vector<int> >& skillRequirements);
+    ~Activity(void);
+    void SetActivitySettings(int id, std::string name, int duration, std::vector<std::vector<int> >& skillRequirements);
+
     int GetDuration();
-    int Id() const { return id; }
-    void Id(int val) { id = val; }
+    int GetId() const { return id; }
+    void SetId(int val) { id = val; }
 
 private:
     int id;
@@ -24,6 +27,7 @@ private:
     int duration;
     int startingTime;
     int finishingTime;
+    std::vector<std::vector<int> > skillRequirements;
 };
 
 #endif // ACTIVITY_H

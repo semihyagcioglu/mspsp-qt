@@ -1,3 +1,8 @@
+0.0.6    2013-07-27
+	- Added several classes.
+	- Added the MIT licence.
+	- Updated readme file.
+
 0.0.5    2013-04-24
 	- Added TeamMember class.
 	- Added activity based features to Project class.
