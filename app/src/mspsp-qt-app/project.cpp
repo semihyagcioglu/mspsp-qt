@@ -73,7 +73,7 @@ TeamMember* Project::GetTeamMemberById( int id )
 {
     for(int i = 0; i < teamMembers.size(); ++i)
     {
-        if(GetTeamMemberAt(i)->Id() == id)   //id found at index i
+        if(GetTeamMemberAt(i)->GetId() == id)   //id found at index i
         {
             return GetTeamMemberAt(i);
         }

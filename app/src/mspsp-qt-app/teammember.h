@@ -14,12 +14,17 @@ public:
     TeamMember(int id, std::string name);
 
     void SetTeamMemberSettings(int id, std::string name);
-    int Id() const { return id; }
-    void Id(int val) { id = val; }
+
+    int GetSkillAt(int level, int domain);
+    int GetSkillSumForEachLevel(int level); // For single skill level.
+
+    int GetId() const { return id; }
+    void SetId(int val) { id = val; }
 
 private:
     int id;
     std::string name;
+    std::vector<std::vector<int> > skills;
 };
 
 #endif // TEAMMEMBER_H
