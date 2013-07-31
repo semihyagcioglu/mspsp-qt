@@ -19,13 +19,11 @@ public:
     Activity(int id, std::string name, int duration, std::vector<std::vector<int> >& skillRequirements);
     ~Activity(void);
     void SetActivitySettings(int id, std::string name, int duration, std::vector<std::vector<int> >& skillRequirements);
-
     int GetDuration();
-
     std::vector < TeamMember * > GetAssignedTeamMembers();
     bool AreSkillRequirementsSatisfied(); // Check if activity can be performed with the assigned team members.
     void SortAssignedTeamMembersBySkillCount(int level); // Sort by single skill level.
-
+    int GetSkillRequirementsBySkill(int skillId); // Hierarchical skill levels are not considered yet.
     int GetId() const { return id; }
     void SetId(int val) { id = val; }
 

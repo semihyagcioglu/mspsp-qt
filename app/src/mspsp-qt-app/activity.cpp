@@ -78,9 +78,26 @@ std::vector<TeamMember*> Activity::GetAssignedTeamMembers()
     return this->assignedTeamMembers;
 }
 
-void Activity::SortAssignedTeamMembersBySkillCount(int level)
+void Activity::SortAssignedTeamMembersBySkillCount(int level) // FIX: Skill level is yet to be considered.
 {
     std::sort(assignedTeamMembers.begin(), assignedTeamMembers.end(), CompareBySkillSum);
+}
+
+int Activity::GetSkillRequirementsBySkill( int skillId )
+{
+    int skillIndex = skillId; // FIX: Reconsider this!
+
+    int sum = 0;
+
+    for(std::size_t i = 0; i < skillRequirements.size(); ++i) // For each skill level
+    {
+        if(skillRequirements.at(i).at(skillIndex) == 1)
+        {
+            ++sum;
+        }
+    }
+
+    return sum;
 }
 
 bool CompareBySkillSum(TeamMember* a, TeamMember* b)
