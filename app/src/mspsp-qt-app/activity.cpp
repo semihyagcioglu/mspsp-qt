@@ -100,6 +100,15 @@ int Activity::GetSkillRequirementsBySkill( int skillId )
     return sum;
 }
 
+void Activity::AssignTeamMember( TeamMember* teamMember )
+{
+    if(std::find(this->assignedTeamMembers.begin(), this->assignedTeamMembers.end(), teamMember) == this->assignedTeamMembers.end())
+    {
+        /* Selected team member is not in the assigned team member list for the activity.*/
+        this->assignedTeamMembers.push_back(teamMember);
+    }
+}
+
 bool CompareBySkillSum(TeamMember* a, TeamMember* b)
 {
     return a->GetSkillSumForEachLevel(0) < b->GetSkillSumForEachLevel(0);
