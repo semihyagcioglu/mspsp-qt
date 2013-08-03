@@ -73,11 +73,6 @@ bool Activity::AreSkillRequirementsSatisfied()
     return false; // FIX: For now assume that every team member in the project have every skill activities require.
 }
 
-std::vector<TeamMember*> Activity::GetAssignedTeamMembers()
-{
-    return this->assignedTeamMembers;
-}
-
 void Activity::SortAssignedTeamMembersBySkillCount(int level) // FIX: Skill level is yet to be considered.
 {
     std::sort(assignedTeamMembers.begin(), assignedTeamMembers.end(), CompareBySkillSum);
@@ -106,6 +101,35 @@ void Activity::AssignTeamMember( TeamMember* teamMember )
     {
         /* Selected team member is not in the assigned team member list for the activity.*/
         this->assignedTeamMembers.push_back(teamMember);
+    }
+}
+
+std::vector<TeamMember*> Activity::GetAssignedTeamMembers()
+{
+    return this->assignedTeamMembers;
+}
+
+TeamMember * Activity::GetAssignedTeamMemberAt(std::size_t i )
+{
+    if(i < this->assignedTeamMembers.size())
+    {
+        return this->assignedTeamMembers.at(i);
+    }
+    else
+    {
+        return NULL;
+    }
+}
+
+void Activity::RemoveTeamMemberAssignment( TeamMember* teamMember )
+{
+    for(std::size_t i = 0; i < this->assignedTeamMembers.size(); ++i)
+    {
+        if(GetAssignedTeamMemberAt(i)->GetId() == teamMember->GetId())   //id found at index i
+        {
+            this->assignedTeamMembers.erase(assignedTeamMembers.begin()+i);
+            break;
+        }
     }
 }
 

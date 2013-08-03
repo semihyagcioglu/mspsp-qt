@@ -22,11 +22,13 @@ public:
     int GetId() const { return id; }
     void SetId(int val) { id = val; }
     int GetDuration();
-    std::vector < TeamMember * > GetAssignedTeamMembers();
     bool AreSkillRequirementsSatisfied(); // Check if activity can be performed with the assigned team members.
     void SortAssignedTeamMembersBySkillCount(int level); // Sort by single skill level.
     int GetSkillRequirementsBySkill(int skillId); // Hierarchical skill levels are not considered yet.
     void AssignTeamMember(TeamMember* teamMember); // Assign the team member to activity and sets the earliest available time period of the team member to the finishing time of the activity.
+    std::vector<TeamMember *> GetAssignedTeamMembers(); // Returns the assigned team members for the activity.
+    TeamMember * GetAssignedTeamMemberAt(std::size_t i);
+    void RemoveTeamMemberAssignment(TeamMember* teamMember); // Remove given team member from assigned team members list.
 
 private:
     int id;
