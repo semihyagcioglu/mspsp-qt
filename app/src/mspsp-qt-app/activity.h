@@ -29,6 +29,7 @@ public:
     std::vector<TeamMember *> GetAssignedTeamMembers(); // Returns the assigned team members for the activity.
     TeamMember * GetAssignedTeamMemberAt(std::size_t i);
     void RemoveTeamMemberAssignment(TeamMember* teamMember); // Remove given team member from assigned team members list.
+    void AddPredecessor(Activity* predecessor); // Add an activity as a predecessor to the activity. (An activity can not start until all the predecessors of the activity is scheduled.)
 
 private:
     int id;
@@ -38,6 +39,7 @@ private:
     int finishingTime;
     std::vector<std::vector<int> > skillRequirements;
     std::vector<TeamMember*> assignedTeamMembers;
+    std::vector<Activity*> predecessors; // The activity can not be executed until the predecessor activities are finished.
 };
 
 bool CompareBySkillSum(TeamMember* a, TeamMember* b); // Reconsider!

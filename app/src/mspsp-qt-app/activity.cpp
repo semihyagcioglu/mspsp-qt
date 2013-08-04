@@ -133,6 +133,11 @@ void Activity::RemoveTeamMemberAssignment( TeamMember* teamMember )
     }
 }
 
+void Activity::AddPredecessor( Activity* predecessor )
+{
+    this->predecessors.push_back(predecessor);
+}
+
 bool CompareBySkillSum(TeamMember* a, TeamMember* b)
 {
     return a->GetSkillSumForEachLevel(0) < b->GetSkillSumForEachLevel(0);
