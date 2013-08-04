@@ -30,6 +30,7 @@ public:
     TeamMember * GetAssignedTeamMemberAt(std::size_t i);
     void RemoveTeamMemberAssignment(TeamMember* teamMember); // Remove given team member from assigned team members list.
     void AddPredecessor(Activity* predecessor); // Add an activity as a predecessor to the activity. (An activity can not start until all the predecessors of the activity is scheduled.)
+    std::vector<Activity*> GetPredecessors(); // Get the predecessors of an activity.
 
 private:
     int id;
