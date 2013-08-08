@@ -30,6 +30,10 @@ Road Map
 ------------
     - First version will include basic classes and general architecture to solve the problem.
 
+Testing
+------------
+    - In order to run unit tests, test classes should be defined in the test project.
+
 Copyright Info
 --------------
 This software is licenced under the MIT License (MIT) Copyright (c) 2013 Semih Yağcıoğlu
