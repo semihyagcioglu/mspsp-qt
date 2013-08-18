@@ -4,15 +4,26 @@ TeamMember::TeamMember()
 {
 }
 
-TeamMember::TeamMember(int id, std::string name)
+TeamMember::TeamMember(int id, std::string name, std::vector<std::vector<int> >& skills)
 {
-    this->SetTeamMemberSettings(id, name);
+    SetTeamMemberSettings(id, name, skills);
 }
 
-void TeamMember::SetTeamMemberSettings(int id, std::string name)
+TeamMember::~TeamMember(void)
 {
+}
+
+void TeamMember::SetTeamMemberSettings( int id, std::string name, std::vector<std::vector<int> >& skills)
+{
+    this->skills.clear();
     this->id = id;
     this->name = name;
+    this->availableTimePeriod = 0;
+
+    for(std::size_t i = 0; i < skills.size(); ++i)
+    {
+        this->skills.push_back(skills.at(i));
+    }
 }
 
 int TeamMember::GetSkillAt( int level, int domain )

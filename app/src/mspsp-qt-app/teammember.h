@@ -11,9 +11,10 @@ class TeamMember
 {
 public:
     TeamMember();
-    TeamMember(int id, std::string name);
+    TeamMember(int id, std::string name, std::vector<std::vector<int> >& skills);
+    ~TeamMember();
 
-    void SetTeamMemberSettings(int id, std::string name);
+    void SetTeamMemberSettings(int id, std::string name, std::vector<std::vector<int> >& skills);
 
     int GetSkillAt(int level, int domain);
     int GetSkillSumForEachLevel(int level); // For single skill level.
@@ -25,6 +26,7 @@ private:
     int id;
     std::string name;
     std::vector<std::vector<int> > skills;
+    int availableTimePeriod;
 };
 
 #endif // TEAMMEMBER_H
