@@ -11,6 +11,7 @@ public:
     ~Chromosome();
 
     void AddGene(Gene* gene);
+    Gene* GetGeneAt(int i);
     void SetFitness(double fitness);
     double GetFitness();
     size_t GetGeneCount();

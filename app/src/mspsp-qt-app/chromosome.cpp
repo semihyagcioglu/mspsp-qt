@@ -25,6 +25,10 @@ void Chromosome::AddGene(Gene* gene)
     genes.push_back(_gene);
 }
 
+Gene* Chromosome::GetGeneAt(int i)
+{
+    return genes[i];
+}
 
 void Chromosome::SetFitness(double fitness)
 {
