@@ -35,7 +35,7 @@ void Chromosome::SetFitness(double fitness)
     this->fitness = fitness;
 }
 
-double Chromosome::GetFitness()
+int Chromosome::GetFitness()
 {
     return this->fitness;
 }
