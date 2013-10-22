@@ -12,10 +12,11 @@ public:
 
     void AddGene(Gene* gene);
     Gene* GetGeneAt(int i);
-    void SetFitness(double fitness);
+    void SetFitness(int fitness);
     int GetFitness();
     size_t GetGeneCount();
     void SwapGenes(int firstPosition, int secondPosition);
+    int GetPositionOfGene(Gene* gene);
     std::vector<Gene*> GetGenes() const { return genes; }
     void SetGenes(std::vector<Gene*> val) { genes = val; }
 

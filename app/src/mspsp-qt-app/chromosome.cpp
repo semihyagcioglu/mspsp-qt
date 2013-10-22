@@ -30,7 +30,7 @@ Gene* Chromosome::GetGeneAt(int i)
     return genes[i];
 }
 
-void Chromosome::SetFitness(double fitness)
+void Chromosome::SetFitness(int fitness)
 {
     this->fitness = fitness;
 }
@@ -43,4 +43,26 @@ int Chromosome::GetFitness()
 void Chromosome::SwapGenes( int firstPosition, int secondPosition )
 {
     std::swap(genes[firstPosition], genes[secondPosition]);
+}
+
+int Chromosome::GetPositionOfGene( Gene* gene )
+{
+    std::vector <Gene*>::iterator i = this->genes.begin ();
+    int position = -1;
+
+    while (i != this->genes.end ()){
+        //cout << *i << endl;
+        ++ i;
+    }
+
+    i = find (this->genes.begin (),this->genes.end (), gene);
+
+    if (i != this->genes.end ())
+    {
+        position = distance(this->genes.begin (), i);
+        //cout << "Value "<< *i;
+        //cout << " found in the vector at position: " << nPosition << endl;
+    }
+
+    return position;
 }
