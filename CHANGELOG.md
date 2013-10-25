@@ -1,3 +1,8 @@
+0.0.7    2013-10-26
+	- Made changes in Team member and Activity classes.
+	- Enhanced the model by adding new features to Chromosome class.
+	- Updated readme file.
+	
 0.0.6    2013-07-27
 	- Added several classes.
 	- Added the MIT licence.
